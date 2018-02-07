@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Multicolor slider</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="colors">
+            <div class="color-section">
+                <div id="show-start-color" class="show-color"></div>
+                <label>
+                    Enter start color:<input type="text" id="start-color" class="enter-color" placeholder="000000">
+                    <input type="button" id="start-color-btn" value="OK">
+                </label>
+            </div>
+
+            <div id="show-current-color" class="color-section">
+                <div class="show-color"></div>
+                <p>#000000</p>
+            </div>
+
+            <div class="color-section">
+                <div id="show-end-color" class="show-color"></div>
+                <label>
+                    Enter end color:<input type="text" id="end-color" class="enter-color" placeholder="ffffff">
+                    <input type="button" id="end-color-btn" value="OK">
+                </label>
+            </div>
+        </div>
+        <div id="slider">
+            <div id="thumb">
+                <div id="thumb-text">asdasdasd</div>
+            </div>
+        </div>
+
+        <script src="nslider.js"></script>
+        <script>
+            var sliderEl = document.getElementById('slider');
+            var startColValue = document.getElementById('start-color');
+            var endColValue = document.getElementById('end-color');
+
+            var startBtn = document.getElementById('start-color-btn');
+            var endBtn = document.getElementById('end-color-btn');
+
+            var startColor = document.getElementById('show-start-color');
+            var currentColor = document.getElementById('show-current-color');
+            var endColor = document.getElementById('show-end-color');
+            var showCurrentColorValue = currentColor.childNodes[3];
+
+            slider(
+                {
+                    elem: sliderEl,
+                    startColor: startColValue,
+                    endColor: endColValue,
+                    startBtn: startBtn,
+                    endBtn:endBtn,
+                    showStartColor: startColor,
+                    showCurrentColor: currentColor,
+                    showEndColor: endColor,
+                    showCurrentValue:showCurrentColorValue
+                });
+
+        </script>
+    </body>
+</html>
